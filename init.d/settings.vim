@@ -3,7 +3,7 @@ filetype off		" Helps force plugins to load correctly when it is turned back on 
 syntax on		" Turn on syntax highlighting
 set modelines=0		" Security
 set visualbell		" Blink cursor on error instead of beeping (grr)
-set encoding=utf-8	" Encoding
+set encoding=UTF-8	" Encoding
 set hidden		" Allow hidden buffers
 set ttyfast		" Rendering
 set laststatus=2	" Status bar
@@ -33,4 +33,4 @@ set ruler		" Show row and column ruler information
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start		" Backspace behaviour
 
-
+autocmd VimEnter * NERDTree
