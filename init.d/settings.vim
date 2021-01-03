@@ -1,6 +1,8 @@
 set nocompatible	" Don't try to be vi compatible
 filetype off		" Helps force plugins to load correctly when it is turned back on below
 syntax on		" Turn on syntax highlighting
+filetype plugin indent on
+
 set modelines=0		" Security
 set visualbell		" Blink cursor on error instead of beeping (grr)
 set encoding=UTF-8	" Encoding
@@ -32,5 +34,20 @@ set ruler		" Show row and column ruler information
 
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start		" Backspace behaviour
+set clipboard=unnamed	" Set to can yank - paste in different terminal
 
-autocmd VimEnter * NERDTree
+""""" NERDTree Settings """""
+" Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
+" to hide unwanted files
+let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'node_modules/' ]
+
+" show hidden files
+" let NERDTreeShowHidden=1
