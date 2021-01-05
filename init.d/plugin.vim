@@ -7,8 +7,8 @@ Plug 'preservim/nerdtree' |
 	    \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'joshdick/onedark.vim'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'kien/ctrlp.vim'
 
 """""" Version Control """""
@@ -19,11 +19,12 @@ Plug 'airblade/vim-gitgutter' " git changes on the gutter
 Plug 'christoomey/vim-tmux-navigator'
 
 
+
 call plug#end()
 
 
 """"" SETUP VISUAL """""
-colorscheme onedark
+colorscheme gruvbox8_hard
 let g:airline_theme='badwolf'
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',

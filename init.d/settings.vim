@@ -51,3 +51,10 @@ let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'no
 
 " show hidden files
 " let NERDTreeShowHidden=1
+
+syntax sync fromstart
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+
+
