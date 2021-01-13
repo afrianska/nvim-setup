@@ -25,7 +25,7 @@ call plug#end()
 
 """"" SETUP VISUAL """""
 colorscheme gruvbox8_hard
-let g:airline_theme='badwolf'
+"let g:airline_theme='badwolf'
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
                 \ 'Staged'    :'✚',
